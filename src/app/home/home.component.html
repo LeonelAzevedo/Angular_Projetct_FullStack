@@ -1,0 +1,82 @@
+<div class="min-h-screen bg-gradient-to-r from-blue-50 to-blue-100 flex flex-col relative overflow-hidden">
+  <!-- Camadas de fundo com GIFs organizados em grid -->
+  <div class="absolute inset-0 grid grid-cols-2 grid-rows-3 gap-2 opacity-50 z-0">
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/bsIkGcH7zKuAM/giphy.gif');"></div>
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/Sv2RlUTrizbHnO4DkB/giphy.gif');"></div>
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/Cr7yTbjNuY27C/giphy.gif');"></div>
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/H2n5LOh3lvuOQ/giphy.gif');"></div>
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/WsihkyEPkLlfovttgV/giphy.gif');"></div>
+    <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/pznRh8NijRY2Xr0UzG/giphy.gif');"></div>
+  </div>
+
+  <header class="bg-white shadow-md py-4 relative z-10">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <div class="text-xl font-bold">MyAngularApp</div>
+      <div>
+        <button
+          (click)="goToLogin()"
+          class="text-blue-500 hover:text-blue-700 mr-2 bg-transparent border-none cursor-pointer"
+        >
+          Login
+        </button>
+        <span class="text-gray-500">/</span>
+        <button
+          (click)="goToRegister()"
+          class="text-blue-500 hover:text-blue-700 ml-2 bg-transparent border-none cursor-pointer"
+        >
+          Join
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="flex-grow flex flex-col justify-center items-center p-4 relative z-10">
+    <!-- Formulário de pesquisa de filme -->
+    <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-lg">
+      <h2 class="text-xl font-bold mb-4">Search for a Movie</h2>
+      <form>
+        <div class="mb-4">
+          <label for="movieName" class="block text-gray-700 text-sm font-bold mb-2">Movie Name:</label>
+          <input
+            id="movieName"
+            type="text"
+      
+            (input)="onMovieNameChange($event)"
+            class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Enter movie name"
+          />
+        </div>
+        <button
+          type="button"
+          (click)="onSearch()"
+          [disabled]="!isSearchButtonEnabled"
+          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Search
+        </button>
+      </form>
+
+      <!-- Exibição dos dados do filme -->
+      <div ngIf="movieData" class="mt-6">
+        <h3 class="text-lg font-bold">{{ movieData.Title }}</h3>
+        <p><strong>Year:</strong> {{ movieData.Year }}</p>
+        <p><strong>Rated:</strong> {{ movieData.Rated }}</p>
+        <p><strong>Released:</strong> {{ movieData.Released }}</p>
+        <p><strong>Runtime:</strong> {{ movieData.Runtime }}</p>
+        <p><strong>Genre:</strong> {{ movieData.Genre }}</p>
+        <p><strong>Director:</strong> {{ movieData.Director }}</p>
+        <p><strong>Writer:</strong> {{ movieData.Writer }}</p>
+        <p><strong>Actors:</strong> {{ movieData.Actors }}</p>
+        <p><strong>Plot:</strong> {{ movieData.Plot }}</p>
+        <p><strong>Language:</strong> {{ movieData.Language }}</p>
+        <p><strong>Country:</strong> {{ movieData.Country }}</p>
+        <p><strong>Awards:</strong> {{ movieData.Awards }}</p>
+        <img [src]="movieData.Poster" alt="{{ movieData.Title }}" class="mt-4 rounded-lg shadow-lg" />
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-white py-4 mt-8 relative z-10">
+    <div class="container mx-auto text-center text-gray-600">© 2024 MyAngularApp. All rights reserved.</div>
+  </footer>
+</div>
