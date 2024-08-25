@@ -1,18 +1,27 @@
-<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4">
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full">
+<div class="min-h-screen flex items-center justify-center bg-gray-100 p-4 relative">
+    <!-- GIFs de fundo -->
+    <div class="absolute inset-0 grid grid-cols-2 grid-rows-2 gap-2 opacity-50 z-0">
+        <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/DSr5rDEaEZV9m/giphy.gif');"></div>
+        <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/5yeQRdiYrDq2A/giphy.gif');"></div>
+        <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/pYCZPDymIVjeo/giphy.gif');"></div>
+        <div class="bg-cover bg-center" style="background-image: url('https://media.giphy.com/media/rj12FejFUysTK/giphy.gif');"></div>
+    </div>
+
+    <!-- Formulário de Login -->
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-sm w-full z-10">
         <h2 class="text-2xl font-semibold mb-6 text-center">Login</h2>
         <form (ngSubmit)="onLogin()">
             <div class="mb-4">
                 <label for="username" class="block text-gray-700 font-medium mb-2">Login</label>
                 <input type="text" id="username" name="username" required
                     class="form-control block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Digite seu login" />
+                    placeholder="Type your login" />
             </div>
             <div class="mb-6">
-                <label for="password" class="block text-gray-700 font-medium mb-2">Senha</label>
+                <label for="password" class="block text-gray-700 font-medium mb-2">Password</label>
                 <input type="password" id="password" name="password" required
                     class="form-control block w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    placeholder="Digite sua senha" />
+                    placeholder="Type your password" />
             </div>
             <div class="flex justify-between">
                 <button type="submit"
@@ -22,7 +31,7 @@
 
                 <button type="button" (click)="goToHome()"
                     class="btn bg-gray-500 hover:bg-gray-600 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-500">
-                    Voltar
+                    Cancel
                 </button>
             </div>
         </form>
