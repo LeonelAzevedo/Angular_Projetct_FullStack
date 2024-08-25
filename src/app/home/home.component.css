@@ -1,5 +1,5 @@
 .main-container {
-    background-image: url('/assets/background-texture.jpg'); /* Substitua pelo caminho da sua imagem */
+    background-image: url('/assets/background-texture.jpg'); 
     background-size: cover;
     background-position: center;
   }

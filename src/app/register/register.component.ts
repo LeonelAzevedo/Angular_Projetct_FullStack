@@ -11,7 +11,7 @@ export class RegisterComponent {
   password: string = '';
   confirmPassword: string = '';
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   onRegister() {
     if (this.password !== this.confirmPassword) {
@@ -19,12 +19,10 @@ export class RegisterComponent {
       return;
     }
 
-    // Adicione aqui a lógica para registrar o usuário
-    console.log('Registrando usuário:', this.username);
-    this.router.navigate(['/login']); // Exemplo de redirecionamento pós-registro
+    this.router.navigate(['/login']);
   }
 
   onCancel() {
-    this.router.navigate(['/login']); // Exemplo de redirecionamento para a página de login
+    this.router.navigate(['/login']);
   }
 }

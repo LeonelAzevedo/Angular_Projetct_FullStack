@@ -11,9 +11,9 @@ export class HomeComponent {
   movieName: string = '';
   movieData: any = null;
   isSearchButtonEnabled: boolean = false;
-  apiKey: string = '7eb8bcc2'; // Substitua pelo seu API Key
+  apiKey: string = '7eb8bcc2';
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
   onMovieNameChange(event: Event) {
     const input = event.target as HTMLInputElement;
@@ -44,10 +44,10 @@ export class HomeComponent {
   }
 
   goToRegister() {
-    this.router.navigate(['/register']); // Redirecionar para a página de registro
+    this.router.navigate(['/register']);
   }
   goToLogin() {
-    this.router.navigate(['/login']); // Redireciona para a página inicial
+    this.router.navigate(['/login']);
   }
 }
 

@@ -3,8 +3,6 @@ import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms'
 import { Router } from '@angular/router';
 
 
-
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -24,16 +22,16 @@ export class LoginComponent {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
       console.log('Login:', username, password);
-      this.router.navigate(['/dashboard']); // Redirecionar após o login
+      this.router.navigate(['/dashboard']);
     } else {
       alert('Por favor, preencha ambos os campos.');
     }
   }
 
   onRegister() {
-    this.router.navigate(['/register']); // Redirecionar para a página de registro
+    this.router.navigate(['/register']);
   }
   goToHome() {
-    this.router.navigate(['/home']); // Redireciona para a página inicial
+    this.router.navigate(['/home']);
   }
 }
